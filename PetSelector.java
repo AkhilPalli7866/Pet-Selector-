@@ -25,8 +25,8 @@ public class PetSelector{
 
         String Pet = " ";
 
-        Boolean vowel = null ; 
-        Boolean consonant = null; 
+        Boolean vowel = false ; 
+        Boolean consonant = false; 
 
 
 
@@ -53,44 +53,56 @@ public class PetSelector{
 // main programs conditional 
 
 
-        if (color == "blue" || color == "red" || color == "blue"){
+        if (color.equals("blue") || color.equals("red") || color.equals("green")) {
 
-             if (color ==  "blue" && season == "fall" ){
+            if (color.equals("blue") && season.equals("fall")) {
                 Pet = "Alligator";
-             }
-             else if (color == "blue" && season == "spring"){
-                Pet = "Ostritch";
-             }
-             else if (color == "green" && season != "fall"){
-                if (Pet == "Giraffee"){Pet ="Giraffee"; } else{Pet = "Dog";}
+            } 
+            else if (color.equals("blue") && season.equals("spring")) {
+                Pet = "Ostrich";
+            } 
+            else if (color.equals("green") && consonant == true && season.equals("winter")) {
+            Pet = "Giraffe";
+            } 
+            else if (color.equals("green") && !season.equals("fall")) {
+                 Pet = "Dog";
             }
-            else if(color == " red "){
-                if (vowel == true){Pet = "Porcupine";} else {Pet = "Panda";}
+            else if (color.equals("green") && consonant == true && season.equals("winter")) {
+                Pet = "Giraffe";
             }
-            else if (season == "summer"){
-                 if (!(Pet.equals("Dog") || Pet.equals("Panda") || Pet.equals("Porcupine"))) {
-                        Pet = "Pony";
-                 }
-            }
+
+            else if (color.equals("red")) {
+                if (vowel == true) {
+                    Pet = "Porcupine";
+                } else {
+                    Pet = "Panda";
+                }
+            } 
+            else if (season.equals("summer")) {
+                if (!(Pet.equals("Dog") || Pet.equals("Panda") || Pet.equals("Porcupine"))) {
+                    Pet = "Pony";
+                }
+            } 
             else if (consonant == true && color.equals("blue") && !season.equals("summer") && !season.equals("fall")) {
                 if (!Pet.equals("Ostrich")) {
-                        Pet = "Axolotl";
+                    Pet = "Axolotl";
                 }
-             }
+            }
 
-        }
-        else{
-           System.out.println( "Please enter propper inputs");
+        } else {
+            System.out.println("Please enter proper inputs");
+            return;// i put this here becasue when i enter random values it just gives them pet rock i could fix the rock, but this is an easier way to fix it :) .
         } 
-
+        // end of the main conditional.
         // final check it just adds the rock to it 
 
         if (Pet.equals("") || Pet.equals(" ")) {
             Pet = "Pet Rock";
         }
 
+        System.out.println("Your final Pet is " + Pet );
 
-// end of the main conditional. 
+         
 
 
 
